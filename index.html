@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <title>voice</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <br><br><br>
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="textToSpeech" aria-describedby="textToSpeech" placeholder="Enter text">
+                </div>
+                <br>
+                <button type="button" onclick="maleSpeak()" class="btn btn-primary" id="male" name="male">Male voice</button>
+                <button type="button" onclick="femaleSpeak()" class="btn btn-primary" id="female" name="female">Female voice</button>
+              </form>
+          </div>
+        </div>
+
+        <br><br><br>
+    </div>
+
+
+    <script>
+        const maleSpeak = () => {
+        const message = document.querySelector("#textToSpeech").value;
+        var speech = new SpeechSynthesisUtterance();
+      
+        //Set various utterance properties
+        speech.lang = "en-US";
+        speech.text = message;
+        speech.volume = 1;
+        speech.rate = 1;
+        speech.pitch = 2;
+      
+        window.speechSynthesis.speak(speech);
+      };
+
+
+      //female
+      
+
+
+    //   const femaleSpeak = () => {
+    //     const message = document.querySelector("#textToSpeech").value;
+    //     var speech = new SpeechSynthesisUtterance();
+      
+    //     //Set various utterance properties
+    //     speech.lang = "en-US";
+    //     speech.text = message;
+    //     speech.volume = 1;
+    //     speech.rate = 1;
+    //     speech.pitch = 2;
+    //     speech.femaleSpeak=1;
+      
+    //     window.speechSynthesis.speak(speech);
+    //   };
+
+    </script>
+    
+</body>
+</html>
